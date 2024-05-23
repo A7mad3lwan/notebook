@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../../../core/constants/app theme/text_theme.dart';
+import '../../../core/controller/auth/signup_controller.dart';
 import 'custom_button.dart';
 
-class SignupBottomView extends StatelessWidget {
+class SignupBottomView extends GetView<SignupControllerImpl> {
   const SignupBottomView({super.key});
 
   @override
@@ -14,7 +15,9 @@ class SignupBottomView extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: CustomButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.signup();
+            },
             btnText: 'signup',
           ),
         ),
@@ -28,7 +31,9 @@ class SignupBottomView extends StatelessWidget {
             ),
             const SizedBox(width: 15),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                controller.toLogin();
+              },
               child: Text(
                 'login',
                 style: FontStyles.font18.copyWith(color: Colors.deepOrange),

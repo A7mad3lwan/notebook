@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:notebook/core/controller/auth/login_controller.dart';
 
 import '../../widgets/auth/login_view_body.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends GetView<LoginControllerImpl> {
   const LoginView({super.key});
 
   @override

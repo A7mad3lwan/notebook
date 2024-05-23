@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:notebook/core/controller/auth/signup_controller.dart';
 
 import '../../../core/constants/app theme/text_theme.dart';
 
-class SignupTopView extends StatelessWidget {
+class SignupTopView extends GetView<SignupControllerImpl> {
   const SignupTopView({super.key});
 
   @override

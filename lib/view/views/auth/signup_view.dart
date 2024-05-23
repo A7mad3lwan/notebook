@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:notebook/core/controller/auth/signup_controller.dart';
 
 import '../../widgets/auth/signup_view_body.dart';
 
-class SignupView extends StatelessWidget {
+class SignupView extends GetView<SignupControllerImpl> {
   const SignupView({super.key});
 
   @override
@@ -15,7 +17,9 @@ class SignupView extends StatelessWidget {
             'signup page',
           ),
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.toLogin();
+            },
             icon: const Icon(FontAwesomeIcons.arrowLeft),
           ),
         ),
