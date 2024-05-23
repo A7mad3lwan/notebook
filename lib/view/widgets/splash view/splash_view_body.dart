@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:notebook/core/app%20routes/routes.dart';
 import 'package:notebook/core/constants/app%20theme/text_theme.dart';
 import 'package:notebook/core/constants/assets/asset_images.dart';
 
@@ -22,7 +24,19 @@ class _SplashViewBodyState extends State<SplashViewBody>
         .animate(animationController);
     animationController.forward();
 
+    Future.delayed(
+      const Duration(seconds: 1),
+      () {
+        Get.offAllNamed(AppRoutes.loginView);
+      },
+    );
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override

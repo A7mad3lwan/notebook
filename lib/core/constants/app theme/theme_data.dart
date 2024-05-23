@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notebook/core/constants/app%20theme/text_theme.dart';
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
@@ -6,9 +7,10 @@ ThemeData darkTheme = ThemeData(
   fontFamily: 'PlayfairDisplay',
   appBarTheme: const AppBarTheme(
     centerTitle: true,
-    toolbarHeight: 50,
+    toolbarHeight: 55,
     elevation: 0,
     backgroundColor: Color(0xff100B20),
+    toolbarTextStyle: FontStyles.font20,
   ),
 );
 
@@ -18,8 +20,9 @@ ThemeData lightTheme = ThemeData(
   fontFamily: 'PlayfairDisplay',
   appBarTheme: const AppBarTheme(
     centerTitle: true,
-    toolbarHeight: 50,
+    toolbarHeight: 55,
     elevation: 0,
     backgroundColor: Colors.white,
+    toolbarTextStyle: FontStyles.font20,
   ),
 );
