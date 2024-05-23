@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'core/app routes/get_pages.dart';
 import 'core/constants/app theme/theme_data.dart';
 
 void main() async{
@@ -17,6 +18,7 @@ class Notebook extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: darkTheme,
+      getPages: pages,
     );
   }
 }
