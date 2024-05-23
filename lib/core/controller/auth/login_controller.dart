@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:notebook/core/app%20routes/routes.dart';
 
 abstract class LoginController extends GetxController {
   login();
@@ -50,5 +51,7 @@ class LoginControllerImpl extends LoginController {
   }
 
   @override
-  toSignup() {}
+  toSignup() {
+    Get.offAllNamed(AppRoutes.signupView);
+  }
 }
