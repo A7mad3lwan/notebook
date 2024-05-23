@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-abstract class Styles {
+abstract class FontStyles {
   static const font20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
