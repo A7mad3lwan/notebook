@@ -32,6 +32,26 @@ class LoginBottomView extends GetView<LoginControllerImpl> {
             btnText: 'login',
           ),
         ),
+        const SizedBox(height: 50),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'don\'t have an account?',
+              style: FontStyles.font18,
+            ),
+            const SizedBox(width: 15),
+            InkWell(
+              onTap: () {
+                controller.toSignup();
+              },
+              child: Text(
+                'signup',
+                style: FontStyles.font18.copyWith(color: Colors.deepOrange),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
