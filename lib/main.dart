@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(const Notebook());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Notebook extends StatelessWidget {
+  const Notebook({super.key});
 
   // This widget is the root of your application.
   @override
