@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:notebook/core/controller/auth/login_controller.dart';
+import 'package:notebook/core/functions/validator.dart';
 import 'package:notebook/view/widgets/auth/custom_form_filed.dart';
 
 import 'login_top_view.dart';
@@ -25,6 +26,9 @@ class LoginViewBody extends StatelessWidget {
             labelText: 'email',
             hintText: 'enter your email',
             suffix: FontAwesomeIcons.envelope,
+            validator: (val) {
+              return formValidator(val!, 'email', 100, 8);
+            },
           ),
           GetBuilder<LoginControllerImpl>(
             builder: (controller) => CustomFormFiled(
@@ -35,6 +39,9 @@ class LoginViewBody extends StatelessWidget {
               suffix: controller.passwordSuffix,
               onIconTap: () {
                 controller.showPassword();
+              },
+              validator: (val) {
+                return formValidator(val!, 'password', 100, 8);
               },
             ),
           ),
