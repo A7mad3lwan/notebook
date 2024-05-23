@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-ThemeData englishTheme = ThemeData(
+ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   scaffoldBackgroundColor: const Color(0xff100B20),
   fontFamily: 'PlayfairDisplay',
@@ -12,14 +12,14 @@ ThemeData englishTheme = ThemeData(
   ),
 );
 
-ThemeData arabicTheme = ThemeData(
-  brightness: Brightness.dark,
-  scaffoldBackgroundColor: const Color(0xff100B20),
-  fontFamily: 'Cairo',
+ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+  scaffoldBackgroundColor: Colors.white,
+  fontFamily: 'PlayfairDisplay',
   appBarTheme: const AppBarTheme(
     centerTitle: true,
     toolbarHeight: 50,
     elevation: 0,
-    backgroundColor: Color(0xff100B20),
+    backgroundColor: Colors.white,
   ),
 );
