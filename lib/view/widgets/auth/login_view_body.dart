@@ -5,6 +5,11 @@ class LoginViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
+      child: ListView(
+        children: const [],
+      ),
+    );
   }
 }
