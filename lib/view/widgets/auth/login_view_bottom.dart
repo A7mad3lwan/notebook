@@ -26,8 +26,8 @@ class LoginBottomView extends GetView<LoginControllerImpl> {
         SizedBox(
           width: double.infinity,
           child: CustomButton(
-            onPressed: () {
-              controller.login();
+            onPressed: () async {
+              await controller.login();
             },
             btnText: 'login',
           ),
