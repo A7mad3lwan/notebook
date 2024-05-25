@@ -15,8 +15,8 @@ class SignupBottomView extends GetView<SignupControllerImpl> {
         SizedBox(
           width: double.infinity,
           child: CustomButton(
-            onPressed: () {
-              controller.signup();
+            onPressed: () async{
+              await controller.signup();
             },
             btnText: 'signup',
           ),

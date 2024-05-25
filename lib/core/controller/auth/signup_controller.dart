@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:notebook/core/app%20routes/routes.dart';
+import 'package:notebook/core/classes/crud.dart';
+import 'package:notebook/core/constants/api_links.dart';
 
 abstract class SignupController extends GetxController {
   signup();
@@ -11,6 +13,7 @@ abstract class SignupController extends GetxController {
 }
 
 class SignupControllerImpl extends SignupController {
+  Crud crud = Crud();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController username = TextEditingController();
   TextEditingController phone = TextEditingController();
@@ -51,11 +54,26 @@ class SignupControllerImpl extends SignupController {
   }
 
   @override
-  signup() {
+  signup() async {
     var formData = formKey.currentState;
     if (formData!.validate()) {
       if (kDebugMode) {
         print('valid data!');
+      }
+      var response = await crud.postRequest(signupLink, {
+        'username': username.text,
+        'phone': phone.text,
+        'email': email.text,
+        'password': password.text,
+      });
+      if (response['status'] == 'success') {
+        if (kDebugMode) {
+          print('account created successfully');
+        }
+      } else {
+        if (kDebugMode) {
+          print('create account failed');
+        }
       }
     } else {
       if (kDebugMode) {
