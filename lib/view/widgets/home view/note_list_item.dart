@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notebook/data/model/note_model.dart';
 
 import '../../../core/constants/app theme/text_theme.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.noteModel, this.onTrashPressed});
+
+  final NoteModel noteModel;
+  final void Function()? onTrashPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +24,19 @@ class NoteItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: const Text(
-                'Flutter Tips',
+              title:  Text(
+                '${noteModel.noteTitle}',
                 style: FontStyles.font20,
               ),
-              subtitle: const Padding(
-                padding: EdgeInsets.only(top: 16.0),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 16.0),
                 child: Text(
-                  'Build your career with ahmed elwan',
+                  '${noteModel.noteContent}',
                   style: FontStyles.font18,
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: onTrashPressed,
                 icon: const Icon(FontAwesomeIcons.trash),
               ),
             ),

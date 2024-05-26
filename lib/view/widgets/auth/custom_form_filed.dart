@@ -5,8 +5,8 @@ class CustomFormFiled extends StatelessWidget {
   const CustomFormFiled({
     super.key,
     required this.labelText,
-    required this.hintText,
-    required this.suffix,
+    this.hintText,
+    this.suffix,
     this.obscureText,
     this.controller,
     this.keyboardType,
@@ -15,13 +15,14 @@ class CustomFormFiled extends StatelessWidget {
   });
 
   final String labelText;
-  final String hintText;
-  final IconData suffix;
+  final String? hintText;
+  final IconData? suffix;
   final bool? obscureText;
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final String? Function(String?)? validator;
   final void Function()? onIconTap;
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +33,10 @@ class CustomFormFiled extends StatelessWidget {
         keyboardType: keyboardType,
         validator: validator,
         obscureText: obscureText == null || obscureText == false ? false : true,
+        textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+              const EdgeInsets.symmetric(vertical: 18, horizontal: 30),
           floatingLabelBehavior: FloatingLabelBehavior.always,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),

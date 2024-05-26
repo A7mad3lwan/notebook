@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notebook/core/app%20routes/routes.dart';
 import 'package:notebook/core/classes/crud.dart';
@@ -16,6 +17,8 @@ abstract class HomeViewController extends GetxController {
 }
 
 class HomeViewControllerImpl extends HomeViewController {
+  TextEditingController noteTitle = TextEditingController();
+  TextEditingController noteContent = TextEditingController();
   AppServices appServices = Get.find();
   Crud crud = Crud();
 
@@ -45,5 +48,19 @@ class HomeViewControllerImpl extends HomeViewController {
   logout() {
     appServices.sharedPreferences.clear();
     Get.offAllNamed(AppRoutes.loginView);
+  }
+
+  @override
+  void onInit() {
+    noteTitle = TextEditingController();
+    noteContent = TextEditingController();
+    super.onInit();
+  }
+
+  @override
+  void dispose() {
+    noteTitle.dispose();
+    noteContent.dispose();
+    super.dispose();
   }
 }

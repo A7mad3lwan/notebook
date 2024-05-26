@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notebook/core/constants/app%20theme/text_theme.dart';
 import 'package:notebook/core/controller/home_view_controller.dart';
+import 'package:notebook/data/model/note_model.dart';
 
 import 'note_list_item.dart';
 
@@ -32,7 +33,15 @@ class HomeViewBody extends StatelessWidget {
                       itemCount: snapshot.data['data'].length,
                       physics: const BouncingScrollPhysics(),
                       shrinkWrap: true,
-                      itemBuilder: (context, index) => const NoteItem(),
+                      itemBuilder: (context, index) => NoteItem(
+                        noteModel:
+                            NoteModel.fromJson(snapshot.data['data'][index]),
+                        onTrashPressed: () {
+                          controller.deleteNote({
+                            'note_id' : snapshot.data[index]['note_id'].toString()
+                          });
+                        },
+                      ),
                     ),
                   );
                 }
