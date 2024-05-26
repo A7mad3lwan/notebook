@@ -15,9 +15,17 @@ class HomeView extends StatelessWidget {
             'Home',
             style: FontStyles.font20,
           ),
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(FontAwesomeIcons.arrowLeft),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(FontAwesomeIcons.arrowRightFromBracket),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(
+            FontAwesomeIcons.pencil,
           ),
         ),
         body: const HomeViewBody(),

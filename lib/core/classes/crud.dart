@@ -21,7 +21,7 @@ class Crud {
     }
   }
 
-  postRequest(String url, Map<String, dynamic> data) async {
+  postRequest(String url, Map data) async {
     try {
       var response = await http.post(Uri.parse(url), body: data);
       if (response.statusCode == 200) {
