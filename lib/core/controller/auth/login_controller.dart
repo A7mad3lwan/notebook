@@ -56,6 +56,7 @@ class LoginControllerImpl extends LoginController {
         if (kDebugMode) {
           print('login success');
         }
+        appServices.sharedPreferences.setBool('login', true);
         appServices.sharedPreferences.setString('id', response['data']['id'].toString());
         appServices.sharedPreferences.setString('username', response['data']['username'].toString());
         appServices.sharedPreferences.setString('phone', response['data']['phone'].toString());

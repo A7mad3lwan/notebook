@@ -12,16 +12,6 @@ class LoginBottomView extends GetView<LoginControllerImpl> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
-          alignment: Alignment.topRight,
-          child: InkWell(
-            onTap: () {},
-            child: const Text(
-              'forget password?',
-              style: FontStyles.font18,
-            ),
-          ),
-        ),
         const SizedBox(height: 50),
         SizedBox(
           width: double.infinity,
