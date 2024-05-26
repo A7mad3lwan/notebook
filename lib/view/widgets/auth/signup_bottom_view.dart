@@ -17,6 +17,7 @@ class SignupBottomView extends GetView<SignupControllerImpl> {
           child: CustomButton(
             onPressed: () async{
               await controller.signup();
+              controller.toLogin();
             },
             btnText: 'signup',
           ),

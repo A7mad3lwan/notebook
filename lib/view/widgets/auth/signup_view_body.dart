@@ -8,7 +8,6 @@ import 'package:notebook/view/widgets/auth/signup_top_view.dart';
 
 import '../../../core/controller/auth/signup_controller.dart';
 
-
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
 
@@ -50,18 +49,20 @@ class SignupViewBody extends StatelessWidget {
             hintText: 'enter your email',
             suffix: FontAwesomeIcons.envelope,
           ),
-          CustomFormFiled(
-            controller: controller.password,
-            validator: (val) {
-              return formValidator(val!, 'password', 100, 8);
-            },
-            onIconTap: () {
-              controller.showPassword();
-            },
-            obscureText: controller.obscureText,
-            labelText: 'password',
-            hintText: 'enter your password',
-            suffix: controller.passwordSuffix,
+          GetBuilder<SignupControllerImpl>(
+            builder: (controller) => CustomFormFiled(
+              controller: controller.password,
+              validator: (val) {
+                return formValidator(val!, 'password', 100, 8);
+              },
+              onIconTap: () {
+                controller.showPassword();
+              },
+              obscureText: controller.obscureText,
+              labelText: 'password',
+              hintText: 'enter your password',
+              suffix: controller.passwordSuffix,
+            ),
           ),
           const SignupBottomView(),
         ],
