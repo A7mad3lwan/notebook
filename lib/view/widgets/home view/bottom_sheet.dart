@@ -14,7 +14,7 @@ class CustomBottomSheet extends GetView<HomeViewControllerImpl> {
       padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 15),
       child: Column(
         children: [
-           CustomFormFiled(
+          CustomFormFiled(
             controller: controller.noteTitle,
             labelText: 'note title',
             hintText: 'enter note title',
@@ -47,7 +47,12 @@ class CustomBottomSheet extends GetView<HomeViewControllerImpl> {
           const Spacer(),
           SizedBox(
             width: double.infinity,
-            child: CustomButton(onPressed: () {}, btnText: 'save'),
+            child: CustomButton(
+              onPressed: () {
+                controller.addNote();
+              },
+              btnText: 'save',
+            ),
           ),
           const SizedBox(height: 15),
         ],

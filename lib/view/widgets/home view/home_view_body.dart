@@ -36,9 +36,9 @@ class HomeViewBody extends StatelessWidget {
                       itemBuilder: (context, index) => NoteItem(
                         noteModel:
                             NoteModel.fromJson(snapshot.data['data'][index]),
-                        onTrashPressed: () {
-                          controller.deleteNote({
-                            'note_id' : snapshot.data[index]['note_id'].toString()
+                        onTrashPressed: () async {
+                          await controller.deleteNote({
+                            'note_id' : snapshot.data['data'][index]['note_id'].toString(),
                           });
                         },
                       ),

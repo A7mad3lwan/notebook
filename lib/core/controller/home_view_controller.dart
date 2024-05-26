@@ -23,7 +23,20 @@ class HomeViewControllerImpl extends HomeViewController {
   Crud crud = Crud();
 
   @override
-  addNote() {}
+  addNote() async {
+    var response = await crud.postRequest(addNoteLink, {
+      'note_title': noteTitle.text,
+      'note_content': noteContent.text,
+      'note_user': appServices.sharedPreferences.getString('id'),
+    });
+    if (response['status'] == 'success') {
+      Get.offAllNamed(AppRoutes.homeView);
+    } else {
+      if (kDebugMode) {
+        print('fail');
+      }
+    }
+  }
 
   @override
   deleteNote(Map data) async {
