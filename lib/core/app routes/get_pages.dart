@@ -4,8 +4,11 @@ import 'package:notebook/view/views/auth/login_view.dart';
 import 'package:notebook/view/views/auth/signup_view.dart';
 import 'package:notebook/view/views/splash_view.dart';
 
+import '../../view/views/home_view.dart';
+
 List<GetPage<dynamic>>? pages = [
   GetPage(name: '/', page: () => const SplashView()),
   GetPage(name: AppRoutes.loginView, page: () => const LoginView()),
   GetPage(name: AppRoutes.signupView, page: () => const SignupView()),
+  GetPage(name: AppRoutes.homeView, page: () => const HomeView()),
 ];

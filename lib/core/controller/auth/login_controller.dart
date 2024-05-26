@@ -61,6 +61,7 @@ class LoginControllerImpl extends LoginController {
         appServices.sharedPreferences.setString('phone', response['data']['phone'].toString());
         appServices.sharedPreferences.setString('email', response['data']['email'].toString());
         appServices.sharedPreferences.setString('password', response['data']['password'].toString());
+        Get.offAllNamed(AppRoutes.homeView);
       } else {
         if (kDebugMode) {
           print('not valid email or password!');
