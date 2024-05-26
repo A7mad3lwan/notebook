@@ -4,6 +4,7 @@ import 'package:notebook/core/constants/app%20theme/text_theme.dart';
 import 'package:notebook/core/controller/home_view_controller.dart';
 import 'package:notebook/data/model/note_model.dart';
 
+import '../../views/edit_note.dart';
 import 'note_list_item.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -38,8 +39,15 @@ class HomeViewBody extends StatelessWidget {
                             NoteModel.fromJson(snapshot.data['data'][index]),
                         onTrashPressed: () async {
                           await controller.deleteNote({
-                            'note_id' : snapshot.data['data'][index]['note_id'].toString(),
+                            'note_id': snapshot.data['data'][index]['note_id']
+                                .toString(),
                           });
+                        },
+                        onNoteTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) =>
+                                EditNote(note: snapshot.data['data'][index]),
+                          ));
                         },
                       ),
                     ),
