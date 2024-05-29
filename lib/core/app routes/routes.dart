@@ -4,4 +4,6 @@ abstract class AppRoutes {
   static const signupView = '/signup';
   static const homeView = '/home';
   static const editeNote = '/edit';
+  static const forgetPassword = '/forgetPassword';
+
 }
